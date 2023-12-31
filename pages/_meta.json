@@ -1,5 +1,6 @@
 {
   "index": "Introduction",
   "0-creation-dune-application-react": "Création d'une application React",
-  "1-le-jsx": "Le JSX"
+  "1-le-jsx": "Le JSX",
+  "2-les-concepts-de-base-de-react": "Les concepts de base de React"
 }
