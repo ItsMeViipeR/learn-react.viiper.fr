@@ -1,0 +1,54 @@
+# Chapitre 4
+
+## Comprendre les États en React
+
+React offre une fonctionnalité puissante appelée "état" (state), qui permet aux composants de gérer et de suivre les données qui peuvent changer au fil du temps. Les états sont essentiels pour créer des composants dynamiques et interactifs.
+
+## Introduction aux États
+
+En React, l'état est un objet JavaScript qui représente des informations spécifiques à un composant et qui peuvent être modifiées au fil du temps. Contrairement aux propriétés (props) qui sont immuables, les états peuvent être modifiés par le composant lui-même.
+
+## Utilisation des États
+
+### Création de l'État
+
+Pour utiliser l'état dans un composant de classe, commencez par initialiser l'état dans le constructeur :
+
+```jsx
+class MonComposant extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // Définir les propriétés de l'état ici
+      count: 0,
+    };
+  }
+  // ...
+}
+```
+
+### Modifier l'État
+
+La méthode setState est utilisée pour mettre à jour l'état d'un composant. Elle prend en paramètre un objet représentant les nouvelles valeurs d'état :
+
+```tsx
+incrementCount = () => {
+  this.setState({ count: this.state.count + 1 });
+};
+```
+
+## Asynchronicité de `setState`
+
+Il est important de noter que setState peut être asynchrone. Si vous avez besoin de la valeur mise à jour immédiatement après l'appel à setState, vous pouvez passer une fonction de rappel en deuxième argument.
+
+```tsx
+this.setState({ count: this.state.count + 1 }, () => {
+  console.log("Nouvelle valeur de count :", this.state.count);
+});
+```
+
+## Conclusion
+
+Les états sont un concept central de React qui permet aux composants de gérer des données changeantes. En comprenant comment créer, accéder et modifier les états, vous pouvez créer des applications React plus dynamiques et interactives.
+
+Explorez davantage les états en pratiquant avec des exemples concrets et en implémentant des fonctionnalités dynamiques dans vos composants React.
