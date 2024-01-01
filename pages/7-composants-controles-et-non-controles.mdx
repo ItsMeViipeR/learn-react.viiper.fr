@@ -1,0 +1,63 @@
+# Chapitre 7
+
+## Composants Contrôlés et Non Contrôlés en React
+
+La gestion des données dans les éléments de formulaire est essentielle pour toute application. En React, vous pouvez choisir entre des composants contrôlés et non contrôlés pour gérer les données des formulaires. Comprendre ces deux approches vous donne la flexibilité nécessaire pour construire des interfaces utilisateur dynamiques et réactives.
+
+## Composants Contrôlés
+
+Les composants contrôlés sont des composants où la valeur de l'élément de formulaire est gérée par l'état de React. Cela signifie que chaque modification de la valeur de l'élément est gérée par une fonction de mise à jour de l'état.
+
+### Exemple de Composant Contrôlé
+
+```tsx
+import { useState } from "react";
+
+const ControledComponent = () => {
+  const [value, setValue] = useState("");
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return <input type="text" value={value} onChange={handleChange} />;
+};
+```
+
+Dans cet exemple, la valeur de l'input est contrôlée par l'état `value`.
+
+## Composants Non Contrôlés
+
+Les composants non contrôlés laissent le DOM gérer la valeur de l'élément de formulaire. Vous pouvez récupérer la valeur avec des références après que l'utilisateur a interagi avec l'élément.
+
+### Exemple de Composant Non Contrôlé
+
+```tsx
+import { useRef } from "react";
+
+const NonControledComponent = () => {
+  const inputRef = useRef();
+
+  const handleClick = () => {
+    console.log("Valeur de l'input :", inputRef.current.value);
+  };
+
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleClick}>Obtenir la valeur</button>
+    </div>
+  );
+};
+```
+
+Dans cet exemple, la valeur de l'input est récupérée en utilisant la référence `inputRef`.
+
+## Quand utiliser quoi ?
+
+- **Composants Contrôlés** : Utiles lorsque vous avez besoin de manipuler dynamiquement la valeur de l'élément de formulaire ou de valider les données à chaque modification.
+- **Composants Non Contrôlés** : Peuvent être utilisés lorsque vous préférez laisser le DOM gérer la valeur de l'élément, et que vous avez besoin de récupérer la valeur à un moment précis (par exemple, lors d'un bouton "Soumettre").
+
+## Conclusion
+
+La compréhension des composants contrôlés et non contrôlés en React offre une flexibilité importante lors de la gestion des données des formulaires. Choisissez l'approche qui convient le mieux à vos besoins et à la logique de votre application.

@@ -1,10 +1,11 @@
 {
   "index": "Introduction",
-  "0-creation-dune-application-react": "Création d'une application React",
-  "1-le-jsx": "Le JSX",
-  "2-les-concepts-de-base-de-react": "Les concepts de base de React",
-  "3-les-composants": "Les composants",
-  "4-les-etats": "Les états",
-  "5-les-proprietes": "Les propriétés",
-  "6-les-evenements": "Les événements"
+  "0-creation-dune-application-react": "0 - Création d'une application React",
+  "1-le-jsx": "1 - Le JSX",
+  "2-les-concepts-de-base-de-react": "2 - Les concepts de base de React",
+  "3-les-composants": "3 - Les composants",
+  "4-les-etats": "4 - Les états",
+  "5-les-proprietes": "5 - Les propriétés",
+  "6-les-evenements": "6 - Les événements",
+  "7-composants-controles-et-non-controles": "7 - Composants contrôlés et non contrôlés"
 }
