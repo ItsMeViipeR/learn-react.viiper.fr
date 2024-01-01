@@ -1,0 +1,40 @@
+# Chapitre 3
+
+## Qu'est-ce qu'un composant ?
+
+Un composant est un élément que l'on affiche à l'utilisateur mais qui n'est pas dans le fichier de notre page.
+
+```tsx
+/* app/page.tsx */
+
+export default function Home() {
+  return <></>;
+}
+```
+
+La fonction `Home` est un composant. Ce composant sera utilisé par Next.js pour faire le `routing` de l'application.
+
+Un composant peut aussi contenir un autre composant.
+
+```tsx
+/* component.tsx */
+
+export const MyComponent = () => {
+  return <h1>Hello from component</h1>;
+};
+```
+
+```tsx
+/* app/page.tsx */
+
+import { MyComponent } from "@/component.tsx";
+
+export default function Home() {
+  return <MyComponent />;
+}
+```
+
+Ici, nous utilisons le composant `MyComponent` contenu dans le fichier `component.tsx` et importé dans notre page.
+
+L'intérêt des composants est que quand on les utilise correctement, ils permettent d'écrire une seule fois une fonctionnalité (par exemple une carte d'un article sur un blog)
+au lieu de la réécrire à chaque utilisation comme en HTML classique.
