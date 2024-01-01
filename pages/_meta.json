@@ -5,5 +5,6 @@
   "2-les-concepts-de-base-de-react": "Les concepts de base de React",
   "3-les-composants": "Les composants",
   "4-les-etats": "Les états",
-  "5-les-proprietes": "Les propriétés"
+  "5-les-proprietes": "Les propriétés",
+  "6-les-evenements": "Les événements"
 }

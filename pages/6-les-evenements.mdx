@@ -1,0 +1,78 @@
+# Chapitre 6
+
+## Gérer les Événements en React
+
+Les événements sont au cœur de toute application interactive en React. Comprendre comment gérer les événements vous permettra de créer des interfaces utilisateur réactives et dynamiques. Dans ce chapitre, explorons comment réagir aux actions des utilisateurs dans vos composants React.
+
+## Introduction aux Événements
+
+Les événements en React sont similaires aux événements du navigateur, mais avec quelques différences syntaxiques. Vous pouvez réagir à des événements tels que les clics de souris, les changements de formulaire et bien d'autres.
+
+## Gestion des Événements
+
+### Gestion des Événements dans les Composants de Classe
+
+Dans les composants de classe, les gestionnaires d'événements sont définis comme des méthodes de la classe. Voici un exemple de gestionnaire de clic :
+
+```jsx
+class MyComponent extends React.Component {
+  handleClick = () => {
+    console.log("Clic effectué !");
+  };
+
+  render() {
+    return <button onClick={this.handleClick}>Cliquez</button>;
+  }
+}
+```
+
+### Gestion des Événements dans les Composants Fonctionnels
+
+Dans les composants fonctionnels, utilisez le Hook useState pour gérer l'état et réagir aux événements :
+
+```tsx
+import React, { useState } from "react";
+
+const MyComponent = () => {
+  const [clics, setClics] = useState(0);
+
+  const handleClick = () => {
+    setClics(clics + 1);
+    console.log("Clic effectué !");
+  };
+
+  return (
+    <div>
+      <p>Nombre de clics : {clics}</p>
+      <button onClick={handleClick}>Cliquez</button>
+    </div>
+  );
+};
+```
+
+## Événements de Formulaire
+
+Réagissez aux changements dans les éléments de formulaire en utilisant les événements tels que `onChange` :
+
+```tsx
+const MyForm = () => {
+  const handleChange = (e) => {
+    console.log("Nouvelle valeur :", e.target.value);
+  };
+
+  return <input type="text" onChange={handleChange} />;
+};
+```
+
+## Passage de Paramètres aux Gestionnaires d'Événements
+
+Si vous devez passer des paramètres aux gestionnaires d'événements, utilisez une fonction fléchée ou `bind` :
+
+```tsx
+<button onClick={() => handleClick(parametre)}>Cliquez</button>
+<button onClick={handleClick.bind(this, parametre)}>Cliquez</button>
+```
+
+## Conclusion
+
+La gestion des événements est cruciale pour créer des applications interactives en React. En comprenant comment réagir aux actions des utilisateurs, vous serez en mesure de concevoir des interfaces utilisateur dynamiques et réactives.
