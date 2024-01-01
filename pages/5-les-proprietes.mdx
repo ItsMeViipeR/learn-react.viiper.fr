@@ -1,0 +1,78 @@
+# Chapitre 5
+
+## Comprendre les Propriétés (Props) en React
+
+Les propriétés (props) sont l'un des concepts fondamentaux de React. Elles permettent de transmettre des données de parent à enfant dans une application React. Comprendre comment utiliser et manipuler les props est essentiel pour développer des composants React flexibles et réutilisables.
+
+## Introduction aux Propriétés
+
+Les propriétés (props) sont des données que l'on passe à un composant React. Elles sont utilisées pour configurer et personnaliser le comportement d'un composant. Les props sont passées de parent à enfant et sont immuables.
+
+## Passer des Propriétés
+
+### Passer des Propriétés à un Composant Fonctionnel
+
+Dans un composant fonctionnel, les props sont directement accessibles comme paramètres de la fonction :
+
+```jsx
+const MonComposant = (props) => {
+  return <p>La valeur de ma prop : {props.maProp}</p>;
+};
+```
+
+### Passer des Propriétés à un Composant de Classe
+
+Dans un composant de classe, les props sont accessibles via this.props :
+
+```tsx
+class MyComponent extends React.Component {
+  render() {
+    return <p>La valeur de ma prop : {this.props.maProp}</p>;
+  }
+}
+```
+
+### Propriétés par Défaut (Default Props)
+
+Il est possible de définir des valeurs par défaut pour les props en utilisant la propriété `defaultProps` :
+
+```tsx
+MyComponent.defaultProps = {
+  maProp: "Valeur par défaut",
+};
+```
+
+### Propriétés Enfants (Children Props)
+
+React permet également de passer des composants en tant que propriétés enfants :
+
+```tsx
+<MyComponent>
+  <span>Ceci est un enfant</span>
+</MyComponent>
+```
+
+Dans le composant, les enfants sont accessibles via props.children.
+
+## Validation des Propriétés (Props Validation)
+
+Pour garantir la qualité des données passées via les props, il est possible d'ajouter des validations avec `PropTypes` :
+
+```tsx
+import { ReactNode } from "react";
+
+interface MyComponentProps {
+    children: ReactNode;
+}
+
+export MyComponent = ({ children }: MyComponentProps) => { {/* utilisation de la destructuration en JavaScript */}
+    return (
+        {children}
+    )
+}
+```
+
+## Conclusion
+
+Les propriétés (props) sont un mécanisme puissant pour transmettre des données entre composants React.
+En comprenant comment les passer, définir des valeurs par défaut, gérer les enfants et valider les données, vous serez en mesure de créer des composants React flexibles et modulaires.
